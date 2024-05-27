@@ -1,16 +1,20 @@
-# Python'un resmi Docker imajını kullan
+# Use the official Python image
 FROM python:3.11.4
 
-# Çalışma dizinini ayarla
-WORKDIR /C:\Users\user\Desktop\sayfalar
+# Set the working directory inside the container
+WORKDIR /app
 
-# Gereksinimleri yükle
+# Copy the requirements file into the container
 COPY requirements.txt .
-RUN pip install -r requirements.txt
 
-# Proje dosyalarını kopyala
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the application code into the container
 COPY . .
 
+# Expose port 8000
 EXPOSE 8000
-# Django projesini çalıştır
-CMD ["python", "manage.py", "runserver", "127.0.0.1:8000"]
+
+# Run the Django development server
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
