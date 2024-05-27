@@ -1,0 +1,223 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eğitmen Sayfası</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Nunito Sans", sans-serif;
+        background-color: #f8f8f8;
+      }
+
+      .arkaplan {
+        background-color: #f8f8f8;
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .ust {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 100px;
+      }
+
+      .logo h1 {
+        font-size: 2rem;
+        color: #5e002d;
+      }
+
+      .menu ul {
+        display: flex;
+        list-style: none;
+      }
+
+      .menu ul li {
+        margin-right: 20px;
+      }
+
+      .menu ul li a {
+        text-decoration: none;
+        color: #000202;
+        font-size: 1.6rem;
+      }
+
+      .profil_foto img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+
+      .info-text {
+        font-size: 1.6rem;
+        color: #000202;
+        margin: 10px;
+      }
+
+      .buttons-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #5e002d;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        margin: 10px;
+      }
+
+      .image-container {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .image-container img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .alt {
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      .baglanti ul {
+        list-style: none;
+        display: flex;
+      }
+
+      .baglanti ul li {
+        margin: 0 10px;
+      }
+
+      .baglanti a {
+        text-decoration: none;
+        color: #000202;
+        font-size: 1.6rem;
+      }
+
+      .image-text-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .image-text-container img {
+        width: 600px; /* Adjusted width */
+        height: auto;
+        margin-right: 20px;
+      }
+
+      .text-box {
+        max-width: 400px; /* Adjust the max-width as needed */
+        font-size: 1.4rem;
+        color: #000202;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <div class="arkaplan">
+      <div class="ust">
+        <div class="logo">
+          <h1>CULTURE.net</h1>
+        </div>
+        <div class="menu">
+          <ul>
+            <li><a href="{% url 'sayfa'%}">Ana Sayfa</a></li>
+            <li><a href="#">İletişim</a></li>
+            <li><a href="#">Duyurular</a></li>
+            <li><a href="{% url 'girisYap'%}">Giriş Yap</a></li>
+            <li><a href="{% url 'uyeOl'%}">Üye OL</a></li>
+          </ul>
+        </div>
+        <div class="profil_foto">
+          <img
+            src="data:image/jpeg;base64,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"
+            alt="Kapak resmi"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="orta">
+      <!-- Artistic Texts and Information -->
+      <div class="info-text">
+        Sanatın güzelliğini keşfedin ve öğrenin. Eğitmenimiz sizleri sanat
+        yolculuğunda yönlendirmek için burada.
+      </div>
+
+      <!-- Buttons Section -->
+      <div class="buttons-container">
+        <a href="#" class="button">Üyeleri Görüntüle</a>
+        <a href="#" class="button">Kursları Görüntüle</a>
+        <!-- Add more buttons here -->
+      </div>
+
+      <!-- Image Section 1 with Text Box -->
+      <div class="image-text-container">
+        <img
+          src="https://www.senkronmuzikkursu.com.tr/wp-content/uploads/2018/12/resim-studyosu-ankara.jpg"
+          alt="Image 1"
+        />
+        <div class="text-box">
+          <h2>Kurslarımız</h2>
+          <p>Mzik(piyano,gitar,keman,bateri)</p>
+          <p>Dans(Bale,vals,tango,halk oyunları)</p>
+          <p>Resim</p>
+          <p>Heykeltraşlık</p>
+          <p>Kodlama</p>
+          <p>Drama</p>
+          <p>Aşçılık</p>
+        </div>
+      </div>
+
+      <!-- Image Section 2 -->
+      <div class="image-container">
+        <img
+          src="https://dansakademi.com.tr/uploads/2021/12/dans-okulu-1.webp"
+          alt="Image 2"
+        />
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="arkaplan alt">
+      <div class="alt">
+        <div class="baglanti">
+          <ul>
+            <li><a href="#">İletişim</a></li>
+            <li><a href="#">Sık Sorulan Sorular</a></li>
+            <li><a href="#">Hakkımızda</a></li>
+            <li><a href="#">Duyurular</a></li>
+            <li><a href="#">Anasayfa</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+{% endblock content %}

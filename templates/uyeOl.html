@@ -1,0 +1,173 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Üye Ol</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Nunito Sans", sans-serif;
+        background-color: rgba(94, 0, 45, 0.2);
+        color: #fff;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 30px;
+        letter-spacing: 2px;
+      }
+
+      table {
+        margin: 0 auto;
+        padding: 20px;
+        border: 2px solid rgba(94, 0, 45, 0.9);
+        border-radius: 10px;
+        width: 60%;
+      }
+
+      tr {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      td {
+        flex-basis: 48%; /* Adjust the width as needed */
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        box-sizing: border-box;
+        border: 1px solid rgba(94, 0, 45, 0.9);
+        border-radius: 5px;
+      }
+
+      button {
+        background-color: rgba(94, 0, 45, 0.5);
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #fff;
+        color: #000202;
+      }
+
+      a {
+        color: #000202;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      #text2 {
+        float: left;
+      }
+      select {
+        height: 33%;
+        border: 1px solid rgba(94, 0, 45, 0.9);
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>YENİ BİR HESAP OLUŞTUR</h1>
+
+    <form method="post" action="{% url 'kaydol' %}">
+      {% csrf_token %}
+      <table>
+        <tr>
+          <td>
+            <input
+              type="text"
+              name="ad"
+              placeholder="Adınız"
+              style="width: 90%"
+            />
+          </td>
+          <td>
+            <input
+              type="text"
+              name="soyad"
+              placeholder="Soyadınız"
+              style="width: 90%"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="tel"
+              name="telefon"
+              placeholder="Cep telefon numarası"
+              style="width: 200%"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email giriniz"
+              style="width: 200%"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="password"
+              name="sifre"
+              placeholder="Yeni Şifre"
+              style="width: 200%"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="yil">Doğum Tarihi:</label>
+            <input type="date" id="yil" name="yil" style="width: 200%" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="cinsiyet">Cinsiyet:</label>
+            <input type="radio" id="erkek" name="cinsiyet" value="Erkek" />Erkek
+            <input type="radio" id="kadın" name="cinsiyet" value="Kadın" />Kadın
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"><button type="submit">Kaydol</button></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <a href="{% url 'girisYap' %}">Hesabınız zaten var mı?</a>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
+{% endblock content %}

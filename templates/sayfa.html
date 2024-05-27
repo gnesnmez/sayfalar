@@ -1,0 +1,498 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasarım Kodlama</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body,
+      h1,
+      h2,
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #f8f8f8;
+      }
+
+      ul {
+        list-style: none;
+      }
+      body {
+        font-family: "Nunito Sans", sans-serif;
+      }
+      .arkaplan {
+        background-color: #f8f8f8;
+      }
+      .kapsayici {
+        width: 960px;
+        margin: 0 auto;
+      }
+
+      .ust {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 150px;
+      }
+
+      .ust .logo {
+        text-align: center;
+        color: #000202;
+      }
+      .ust .logo h1 {
+        font-size: 3rem;
+        letter-spacing: 0.5rem;
+        font-style: italic;
+      }
+
+      .ust .logo h1::first-letter {
+        color: #000202;
+      }
+
+      .alt-kenar {
+        border-bottom: 10px solid #5e002d;
+      }
+
+      .ust .logo h2 {
+        font-size: 2rem;
+        font-style: italic;
+      }
+
+      .ust .menu ul {
+        display: flex;
+      }
+      .ust .menu ul li {
+        margin: 0 1rem;
+      }
+
+      .ust .menu .link a {
+        color: #000202;
+        text-decoration: none;
+        font-size: 2rem;
+        padding: 0 1.5rem;
+        font-style: italic;
+      }
+      .ust .menu .link a:hover {
+        color: #000202;
+        text-decoration: underline;
+      }
+
+      .link2 a {
+        text-decoration: none;
+        font-style: italic;
+        font-size: 2rem;
+        color: #000202;
+      }
+      .link2 a:hover {
+        color: #000202;
+        text-decoration: underline;
+      }
+
+      .orta .bolum1 {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .orta .bolum1 .kutu {
+        flex: 1; /* Eşit genişlikte genişlemesini sağlar */
+        margin: 0 10px;
+      }
+      .orta .bolum1 .kutu img {
+        width: 600px;
+        height: 400px;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .orta .bolum1 .kutu p {
+        font-size: 1.6rem;
+      }
+      .orta .bolum1 .kutu .başlık {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      .orta .bolum2 {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .orta .bolum2 .kutu {
+        flex: 1; /* Eşit genişlikte genişlemesini sağlar */
+        margin: 0 10px;
+      }
+      .orta .bolum2 .kutu img {
+        width: 600px;
+        height: 400px;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .orta .bolum2 .kutu p {
+        font-size: 1.6rem;
+      }
+      .orta .bolum2 .kutu .başlık {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      .orta .bolum3 {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .orta .bolum3 .kutu {
+        flex: 1; /* Eşit genişlikte genişlemesini sağlar */
+        margin: 0 10px;
+      }
+      .orta .bolum3 .kutu img {
+        width: 600px;
+        height: 400px;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .orta .bolum3 .kutu p {
+        font-size: 1.6rem;
+      }
+      .orta .bolum3 .kutu .başlık {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      .orta .bolum4 {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .orta .bolum4 .kutu {
+        flex: 1; /* Eşit genişlikte genişlemesini sağlar */
+        margin: 0 10px;
+      }
+      .orta .bolum4 .kutu img {
+        width: 600px;
+        height: 400px;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .orta .bolum4 .kutu p {
+        font-size: 1.6rem;
+      }
+      .orta .bolum4 .kutu .başlık {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      .alt {
+        margin-top: 20px;
+        padding: 20px 0;
+        display: flex;
+        gap: 20px;
+      }
+      .alt .baglanti {
+        flex-grow: 1;
+      }
+
+      .alt .baglanti ul li {
+        border-bottom: dotted 1px #5e002d;
+        margin: 5px 0;
+      }
+
+      .alt .baglanti a {
+        font-size: 1.6rem;
+        text-decoration: none;
+        color: #000202;
+      }
+
+      .alt .baglanti a:hover {
+        color: #000202;
+        text-decoration: underline;
+      }
+
+      .cizgi {
+        border-top: dotted 4px #5e002d;
+        margin: 20px 0;
+      }
+
+      .yazı {
+        margin-top: 25px;
+        margin-bottom: 25px;
+        font-size: 1.8rem;
+        font-weight: bold;
+      }
+      .planlar {
+        display: inline-block;
+        padding: 6px 6px;
+        color: #263238;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+        font-size: 1.6rem;
+        font-weight: bold;
+      }
+      .planlar::before {
+        content: "";
+        position: absolute;
+        background: linear-gradient(to right, #263238, #78909c);
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        transition: left 0.9s ease;
+      }
+      .planlar:hover::before {
+        left: 100%;
+        color: #fff;
+      }
+
+      .kutu:hover img {
+        transform: scale(1.08);
+        transition: transform 0.4s ease;
+      }
+      .ust_orta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .ust_orta img {
+        width: 750px;
+        height: 450px;
+      }
+
+      .ust_orta .yazı,
+      .ust_orta .yazı2 {
+        position: absolute;
+        font-size: 5rem;
+        font-weight: bolder;
+        color: rgb(9, 0, 0) 212;
+        overflow: hidden;
+        z-index: 2;
+      }
+
+      .yazı {
+        left: 250px;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-text-stroke-width: 2px; /* Metin çerçeve kalınlığı */
+        -webkit-text-stroke-color: #00080c;
+      }
+
+      .yazı2 {
+        left: 550px;
+        top: 50%;
+        transform: translateY(-85%);
+        -webkit-text-stroke-width: 2px; /* Metin çerçeve kalınlığı */
+        -webkit-text-stroke-color: #00080c;
+      }
+
+      .yazı::before {
+        content: "";
+        position: absolute;
+        background: linear-gradient(to right, #00080c, #d4e2e7);
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        transition: left 0.9s ease;
+      }
+      .yazı2::before {
+        content: "";
+        position: absolute;
+        background: linear-gradient(to right, #00080c, #646b6e);
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        transition: left 0.9s ease;
+      }
+
+      .yazı:hover::before,
+      .yazı2:hover::before {
+        left: 100%;
+        color: #fff;
+      }
+
+      .ust_orta .orta_img1:hover {
+        transform: scale(1.08);
+        transition: transform 0.4s ease;
+      }
+      .ust_orta .orta_img2:hover {
+        transform: scale(1.08);
+        transition: transform 0.4s ease;
+      }
+      .vertical-text {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        white-space: nowrap;
+        font-size: inherit;
+        color: #000202;
+        position: fixed;
+        top: 50%;
+        left: 60px;
+        transform: translate(-50%, -50%);
+        letter-spacing: 10px; /* Harf aralığını ayarla */
+        font-family: "Arial", sans-serif; /* Yazı tipini değiştir */
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- sayfa üstü-->
+    <div class="arkaplan alt-kenar">
+      <div class="ust kapsayici">
+        <div class="logo">
+          <h1>CULTURE.net</h1>
+          <h2>www.CULTURE.net.com</h2>
+        </div>
+        <div class="menu">
+          <ul>
+            <li class="link"><a href="{% url 'sayfa'%}">Ana Sayfa</a></li>
+            <li class="link"><a href="#">İletişim</a></li>
+            <li class="link"><a href="#">Duyurular</a></li>
+            <li class="link2"><a href="{% url 'girisYap'%}">Giriş Yap</a></li>
+            <li class="link"><a href="{% url 'uyeOl'%}">Üye OL</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dikey yazı -->
+    <div
+      class="mkdf-row-background-text-wrapper-inner"
+      style="font-size: 100px"
+    >
+      <div class="mkdf-row-background-text-2 vertical-text">Culture</div>
+    </div>
+
+    <!-- sayfa ortası-->
+    <div class="orta kapsayici">
+      <div class="ust_orta">
+        <p class="yazı">CULTURE</p>
+        <p class="yazı2">LIFE</p>
+        <img
+          src="https://st3.depositphotos.com/12985790/18427/i/450/depositphotos_184274318-stock-photo-close-view-young-inspired-girl.jpg"
+          alt=""
+          class="orta_img1"
+        />
+        <img
+          src="https://www.cumhuriyet.com.tr/Archive/2024/5/11/2205554/kapak_172451.jpg"
+          alt=""
+          class="orta_img2"
+        />
+      </div>
+
+      <div class="bolum1">
+        <div class="kutu">
+          <p class="başlık">SANAT</p>
+          <p>
+            Bu programlarda resim,müzik,sinema,tiyatro,heykeltraşlık gibi
+            branşlarda eğitmler verilmektedir.Dilediğniz sanat aktivitesine
+            katılarak kendi sanat eserlerinizi oluşturabilirsiniz.
+          </p>
+        </div>
+        <div class="kutu">
+          <a href=""
+            ><img
+              src="https://busmek.bursa.bel.tr/uploads/2021/09/dsc_0184_large.jpg"
+              alt=""
+          /></a>
+        </div>
+      </div>
+
+      <div class="bolum2">
+        <div class="kutu">
+          <a href=""
+            ><img
+              src="https://www.ousiapsikoloji.com/wp-content/uploads/2023/08/Ousia-Psikoloji-Istanbul-Klinik-Psikolog-Yuz-Yuze-Online-Terapi.jpg"
+              alt=""
+          /></a>
+        </div>
+        <div class="kutu">
+          <p class="başlık">KİŞİSEL GELİŞİM</p>
+          <p>
+            Size bizimle çıkacağınız yolculuğunuzda yardımcı olacak özel
+            psikologlar eşlik edecek ,size büyük ölçüde yardım sağlayacaklardır.
+          </p>
+        </div>
+      </div>
+
+      <div class="bolum3">
+        <div class="kutu">
+          <p class="başlık">SPOR</p>
+          <p>
+            Size özel istediğiniz spor branşında hayata geçirebileceğiniz
+            egzersiz planları da paketimizde mevcut. Sizin planlarınıza uygun
+            olarak aylık,haftalık hatta günlük olarak egzersiz planları
+            oluşturulacaktır.
+          </p>
+        </div>
+        <div class="kutu">
+          <a href=""
+            ><img
+              src="https://www.kocaeli.bel.tr/files/uploads/news/default/44244-ucretsiz-spor-okullarinda-yeni-donem-basliyor-20230907-140728-kocaelibel_haberler_1040x562.jpg"
+              alt=""
+          /></a>
+        </div>
+      </div>
+
+      <div class="bolum4">
+        <div class="kutu">
+          <a href=""
+            ><img
+              src="https://karatay.bel.tr/haber/resim1/11157/karatay-kultur-ve-sanat-akademisinde-ilk-kayit-donemi-basladi.jpg-1500.jpg"
+              alt=""
+          /></a>
+        </div>
+        <div class="kutu">
+          <p class="başlık">İLERLEME PLANI</p>
+          <p>
+            Sizin haftalık ve aylık olarak özel ilerleme planlarınız
+            oluşturulur. İstediğiniz zaman kontrol edebileceğiniz bir biçimde
+            hizmete sunulur.
+          </p>
+        </div>
+      </div>
+
+      <div class="cizgi"></div>
+    </div>
+
+    <!-- sayfa altı-->
+    <div class="arkaplan">
+      <div class="alt kapsayici">
+        <div class="baglanti">
+          <ul>
+            <li><a href="#">İletişim</a></li>
+            <li><a href="#">Sık sorulan sorular</a></li>
+            <li><a href="#">Hakkımızda</a></li>
+            <li><a href="#">Duyurular</a></li>
+            <li><a href="#">Anasayfa</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+{% endblock content %}

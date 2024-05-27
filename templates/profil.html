@@ -1,0 +1,404 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasarım Kodlama</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body,
+      h1,
+      h2,
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #f8f8f8;
+      }
+
+      ul {
+        list-style: none;
+      }
+      body {
+        font-family: "Nunito Sans", sans-serif;
+      }
+      .arkaplan {
+        background-color: #f8f8f8;
+      }
+      .kapsayici {
+        width: 960px;
+        margin: 0 auto;
+      }
+
+      .ust {
+        display: flex;
+        justify-content: space-between;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      .ust .logo {
+        text-align: center;
+        color: #000202;
+      }
+      .ust .logo h1 {
+        font-size: 3rem;
+        letter-spacing: 0.5rem;
+        font-style: italic;
+      }
+      .ust .logo h2 {
+        font-size: 2rem;
+        font-style: italic;
+      }
+      .alt-kenar {
+        border-bottom: 10px solid #5e002d;
+      }
+
+      .ust .menu ul {
+        display: flex;
+      }
+      .ust .menu ul li {
+        margin: 0 1rem;
+      }
+
+      .ust .menu .link a {
+        color: #000202;
+        text-decoration: none;
+        font-size: 2rem;
+        padding: 0 1.5rem;
+        font-style: italic;
+      }
+      .ust .menu .link a:hover {
+        color: #000202;
+        text-decoration: underline;
+      }
+      .link2 a {
+        text-decoration: none;
+        font-style: italic;
+        font-size: 2rem;
+        color: #000202;
+      }
+      .link2 a:hover {
+        color: #000202;
+        text-decoration: underline;
+      }
+
+      .profil_foto img {
+        border: 6px solid #5e002d;
+        width: 110px;
+        height: 110px;
+      }
+
+      .alt {
+        margin-top: 20px;
+        padding: 20px 0;
+        display: flex;
+        gap: 20px;
+      }
+      .alt .baglanti {
+        flex-grow: 1;
+      }
+
+      .alt .baglanti ul li {
+        border-bottom: dotted 1px #5e002d;
+        margin: 5px 0;
+      }
+
+      .alt .baglanti a {
+        font-size: 1.6rem;
+        text-decoration: none;
+        color: #000202;
+      }
+
+      .alt .baglanti a:hover {
+        color: #000202;
+        text-decoration: underline;
+      }
+
+      .cizgi {
+        border-top: dotted 4px #5e002d;
+        margin: 20px 0;
+      }
+
+      .ust_uyelik {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .ust_uyelik .uyelik {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      .ust_cizgi {
+        border-bottom: 10px solid #5e002d;
+      }
+      .orta_kapsayici {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+      }
+      .orta_profil {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+      }
+      .orta_profil p {
+        font-size: 1.6rem;
+      }
+      .orta_profil .orta_profil_img img {
+        border: 4px solid #5e002d;
+        width: 250px;
+        height: 280px;
+      }
+      .bilgi {
+        width: 250px;
+      }
+      .bosluk {
+        height: 40px;
+      }
+      .orta_bolum {
+        display: flex;
+        flex-direction: row;
+        gap: 90px;
+      }
+      .bolum1 {
+        display: flex;
+        flex-direction: column;
+        height: 280px;
+        gap: 105px;
+      }
+      .bolum2 {
+        display: flex;
+        flex-direction: column;
+        height: 280px;
+        gap: 90px;
+      }
+      .orta_bolum p {
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #000202;
+      }
+      .orta_bolum .id {
+        border: 2px solid #5e002d;
+        border-radius: 8px;
+      }
+      .ad_bilgi {
+        display: flex;
+        flex-direction: column;
+        width: 140%;
+        gap: 6px;
+      }
+      .mail_bilgi {
+        display: flex;
+        flex-direction: column;
+        width: 140%;
+        gap: 6px;
+      }
+      .telefon_bilgi {
+        display: flex;
+        flex-direction: column;
+        width: 140%;
+      }
+      .sifre_bilgi {
+        display: flex;
+        flex-direction: column;
+        width: 140%;
+        gap: 6px;
+      }
+      .buton {
+        font-weight: bold;
+        color: #000202;
+        background-color: rgba(94, 0, 45, 0.5);
+      }
+      .buton:hover {
+        background-color: #f8f8f8;
+        border: none;
+      }
+      .buton_renk {
+        font-weight: bold;
+        color: #000202;
+        background-color: rgba(94, 0, 45, 0.5);
+      }
+      .buton_renk:hover {
+        background-color: #f8f8f8;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- sayfa üstü-->
+    <div class="arkaplan alt-kenar">
+      <div class="ust kapsayici">
+        <div class="logo">
+          <h1>FITNESSLIFE</h1>
+          <h2>www.fitlife.com</h2>
+        </div>
+        <div class="menu">
+          <ul>
+            <li class="link"><a href="{% url 'uyeGirisi'%}">Anasayfa</a></li>
+            <li class="link">
+              <a href="{% url 'uye_beslenme_view'%}">Beslenme</a>
+            </li>
+            <li class="link2">
+              <a href="{% url 'uye_egzersiz_view'%}">Egzersiz</a>
+            </li>
+            <li class="link"><a href="#">Antrenörler</a></li>
+            <li class="link"><a href="#">İlerlemeniz</a></li>
+
+            <li class="link2"><a href=""></a></li>
+            <li class="link2"><a href=""></a></li>
+            <li class="link2">
+              <a href="{% url 'profil'%}">{{ad_soyad}}</a>
+            </li>
+          </ul>
+        </div>
+        <div class="profil_foto">
+          <img
+            src="https://secure.gravatar.com/avatar/95b6a01bc17475912c4d96334094b775?s=70&d=https%3A%2F%2Fwww.bursasporluyuz.org%2Fwp-content%2Fuploads%2Favatars%2Fbursasporluyuz-guest.jpg&r=g"
+            alt="Kapak resmi"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="ust_uyelik">
+      <div class="uyelik">
+        <p>Profil Düzenleme</p>
+      </div>
+    </div>
+    <div class="ust_cizgi"></div>
+
+    <div class="bosluk"></div>
+
+    <!-- sayfa ortası-->
+    <div class="orta_kapsayici">
+      <div class="orta_profil">
+        <div class="orta_profil_img">
+          <img
+            src="https://secure.gravatar.com/avatar/95b6a01bc17475912c4d96334094b775?s=70&d=https%3A%2F%2Fwww.bursasporluyuz.org%2Fwp-content%2Fuploads%2Favatars%2Fbursasporluyuz-guest.jpg&r=g"
+            alt="Kapak resmi"
+            width="108px"
+            height="108px"
+          />
+        </div>
+        <div class="bilgi">
+          <p>
+            Profil bilgilerinizi bu kısımdan güncelleyebilirsiniz. Ad soyad,
+            mail, şifre ve telefon numarası bilgilerinizi güncellemek için
+            güncelle butonuna tıklayınız.
+          </p>
+        </div>
+      </div>
+
+      <div class="orta_bolum">
+        <div class="bolum1">
+          <form method="post" action="{% url 'update_ad_soyad' %}">
+            {% csrf_token %}
+            <div class="ad_bilgi">
+              <div><p class="id">Ad Soyad</p></div>
+              <div><p>{{ ad_soyad }}</p></div>
+              <div>
+                <input
+                  type="text"
+                  name="new_ad_soyad"
+                  placeholder="Yeni Ad_soyad"
+                  required
+                />
+              </div>
+              <div>
+                <button class="buton_renk" type="submit">Güncelle</button>
+              </div>
+            </div>
+          </form>
+          <form method="post" action="{% url 'update_email' %}">
+            {% csrf_token %}
+            <div class="mail_bilgi">
+              <div><p class="id">Mail</p></div>
+              <div><p>{{ kullanici_email }}</p></div>
+              <div>
+                <input
+                  type="email"
+                  name="new_email"
+                  placeholder="Yeni Email"
+                  required
+                />
+              </div>
+              <div>
+                <button class="buton_renk" type="submit">Güncelle</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="bolum2">
+          <form method="post" action="{% url 'update_telefon' %}">
+            {% csrf_token %}
+            <div class="telefon_bilgi">
+              <div><p class="id">Telefon</p></div>
+              <div><p>{{ kullanici_telefon }}</p></div>
+              <div>
+                <input
+                  type="tel"
+                  name="new_telefon"
+                  placeholder="Yeni Telefon"
+                  required
+                />
+              </div>
+              <div>
+                <button class="buton_renk" type="submit">Güncelle</button>
+              </div>
+            </div>
+          </form>
+          <form method="post" action="{% url 'update_sifre' %}">
+            {% csrf_token %}
+            <div class="sifre_bilgi">
+              <div><p class="id">Sifre</p></div>
+              <div><p>{{ kullanici_sifre }}</p></div>
+              <div>
+                <input
+                  type="password"
+                  name="new_sifre"
+                  placeholder="Yeni Sifre"
+                  required
+                />
+              </div>
+              <div>
+                <button class="buton_renk" type="submit">Güncelle</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="cizgi"></div>
+    <!-- sayfa altı-->
+    <div class="arkaplan">
+      <div class="alt kapsayici">
+        <div class="baglanti">
+          <ul>
+            <li><a href="#">İletişim</a></li>
+            <li><a href="#">Sık sorulan sorular</a></li>
+            <li><a href="#">Hakkımızda</a></li>
+            <li><a href="#">Duyurular</a></li>
+            <li><a href="#">Anasayfa</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+{% endblock content %}
